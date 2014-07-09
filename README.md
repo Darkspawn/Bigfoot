@@ -37,6 +37,11 @@ Set permissions on cache and logs directories
     sudo setfacl -R -m u:www-data:rwx -m u:`whoami`:rwx app/logs/
     sudo setfacl -dR -m u:www-data:rwx -m u:`whoami`:rwx app/logs/
 
+Install asset
+
+    ./app/console bigfoot:asset:install --symlink --env=admin_dev
+    ./app/console assetic:dump --env=admin_dev
+
 On Macosx rather do this way
 
     sudo chmod -R +a "_www allow delete,write,append,file_inherit,directory_inherit" app/cache/
